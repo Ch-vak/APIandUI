@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>One employee Complete information</title>
+</head>
+<body>
+	<div class="header">
+	<h2>found employee by  id</h2>
+	<a th:href="@{/index}"> Back</a>
+
+	</div>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th>Salary</th>
+				<th>State</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+				<tr th:each="emp : ${employee}">
+					<td th:text="${emp.firstName}"></td>
+				    <td th:text="${emp.lastName}"></td>
+					<td th:text="${emp.salary}"></td>
+					<td th:text="${emp.state}"></td>
+					<td th:text="${emp.country}"></td>
+					<td>
+						<a th:href="@{editEmployee(id=${emp.id})}">edit</a>
+					    <a th:href="@{deleteEmployee(id=${emp.id})}">delete</a>
+					</td>
+					
+				
+				</tr>
+		
+		</tbody>
+	</table>
+</body>
+</html>

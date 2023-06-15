@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Index Page</title>
+</head>
+<body>
+<h2> Employee index page</h2>
+<hr>
+<a th:href="@{addEmployee}"> Add employee</a>
+<hr>
+<a th:href="@{allEmployees}"> All employees analytically</a>
+<hr>
+		
+		<form th:action="@{/findById}">
+			<div>
+				<label>Id Search Term:</label> <input id="id"
+					name="id" type="text">
+			</div>
+			<button>Search</button>
+		</form>
+		
+
+</body>
+</html>

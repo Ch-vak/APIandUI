@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Employee page</title>
+</head>
+<body>
+<h2>Add Employee</h2>
+	<br>
+
+<div  >
+	<span th:text="${error}"  th:each ="error : ${validationErrors}"> </span> 
+
+</div>
+<br>
+
+	<form method="POST" th:action="@{addEmployeeSubmit}"
+		th:object="${employee}">
+		<div>
+			<label>Employee first name</label> 
+			<input id="firstName" th:field="*{firstName}" type="text">
+		</div>
+		<div>
+			<label>Employee last name</label> 
+			<input id="lastName" th:field="*{lastName}" type="text">
+		</div>
+		<div>
+			<label>Employee salary</label> 
+			<input id="salary" th:field="*{salary}" type="number" step="any">
+		</div>
+		<div>
+			<label>Employee state</label> 
+			<input id="state" th:field="*{state}" type="text">
+		</div>
+		<div>
+			<label>Employee country</label> 
+			<input id="country" th:field="*{country}" type="text">
+		</div>
+		<button>Submit</button>
+
+	</form>
+	
+		<a th:href="@{/}"> BACK</a>
+</body>
+</html>
